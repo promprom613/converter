@@ -47,7 +47,7 @@ private const val EVEN = "scale=trunc(iw/2)*2:trunc(ih/2)*2"
 private fun aud(vararg x: String) = listOf("-vn") + x.toList()
 private fun vid(vararg x: String) = listOf("-map", "0:v:0", "-map", "0:a?") + x.toList()
 private fun h264(q: Int) = vid(
-    "-vf", EVEN, "-c:v", "libx264", "-preset", "veryfast", "-crf", p(q, "20", "24", "29"),
+    "-vf", EVEN, "-c:v", "libx264", "-preset", "veryfast", "-crf", p(q, "16", "20", "26"),
     "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k"
 )
 
